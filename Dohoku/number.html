@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>検索結果</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <header>
+            <h1>北海道バス図鑑</h1>
+            <p>画像の無断使用及び事業者様へのお問い合わせはおやめください</p>
+        </header>
+        <div class="niku">
+            <p>道北バス車両検索ツール</p>
+            <p>道北バスの車両を登録番号で検索できます。</p>
+            <p>入力例：旭川200か・593→a200k593<br>旭川230あ・304→a230a304</p>
+            <form action="" method="get" onsubmit="navigateToPage(event)">
+                <label for="filename">登録番号を入力してください:</label>
+                <input type="text" id="filename" name="filename" required>
+                <button type="submit">表示</button>
+            </form>
+        </div>
+        
+
+        <script>
+            function navigateToPage(event) {
+                event.preventDefault();
+                const filename = document.getElementById('filename').value.trim();
+                if (filename) {
+                    window.location.href = filename + '.html';
+                }
+            }
+        </script>
+    </body>
+</html>
