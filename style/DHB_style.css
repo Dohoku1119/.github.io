@@ -13,7 +13,7 @@ header ul {
     padding: 0;
     margin: 0;
     width: 100%;
-    margin: 8px 0 0 0; /* 上に24pxの余白を追加（値はお好みで調整） */
+    margin: 8px 0 0 0; /* 上に8pxの余白を追加 */
 }
 
 header li {
@@ -90,12 +90,12 @@ header li.DNB a:hover {
 .body {
     width: 80%;
     margin-left: 0;
-    margin-right: 0; /* autoを削除 */
+    margin-right: 0;
     height: 100vh;
-    margin-top: 0; /* コンテナでmargin-topを設定するため削除 */
+    margin-top: 0;
 }
 
-.body p{
+.body p {
     text-align: center;
     font-size: 20pt;
 }
@@ -107,11 +107,10 @@ header li.DNB a:hover {
 }
 
 .data a img {
-    width: 10%;
-    height: auto;
+    width: 55%;
+    height: auto;  
     margin-top: 20px;
     transition: background 0.2s;
-
 }
 
 .data a img:hover {
@@ -122,21 +121,26 @@ header li.DNB a:hover {
     width: 20%;
     height: 100vh;
     margin-right: 0;
-    margin-left: 0; /* autoを削除 */
+    margin-left: 0;
     background-color: #ffffff;
-    margin-top: 0; /* コンテナでmargin-topを設定するため削除 */
-    border-left: 5px dotted black; /* 右側に点線の仕切り線 */
+    margin-top: 0;
+    border-left: 5px dotted black; /* 左側に点線の仕切り線 */
 }
 
-.data img{
-    width: 60%;
-    margin: 0 auto;
-    display: block;
+.image-container {
+    position: relative;
+    display: inline-block;
 }
 
-.cars a img{
-    width: 35vw;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.image-text {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    pointer-events: none;
+    z-index: 1;
 }
