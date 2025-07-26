@@ -1,23 +1,93 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>北海道バス図鑑</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="niku">
-            <h1>北海道バス図鑑</h1>
-            <p>北海道のバスの写真を集めたサイトです。</p>
-            <p>基本的には旭川周辺の事業者の写真を掲載していきます。</p>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style/style.css">
+    <title>北海道バス写真館</title>
+</head>
+<body>
+    <header>
+        <div id="header-slider" style="overflow:hidden; width:100%; height:200px; position:relative;">
+            <img id="slider-img1" src="pic/header/header_1.JPG" alt="ヘッダー画像1" style="width:100%; height:200px; object-fit:cover; position:absolute; left:0; top:0; transition:left 1s;">
+            <img id="slider-img2" src="pic/header/header_2.JPG" alt="ヘッダー画像2" style="width:100%; height:200px; object-fit:cover; position:absolute; left:100%; top:0; transition:left 1s;">
+            <div class="slider-title">北海道バス図鑑</div>
         </div>
-        <div class="link">
-            <a href="ALFA/index.html">道北バス</a>
-            <a href="Asaden/asaden.html">旭川電気軌道</a>
-            <a href="Chuo/chuo.html">北海道中央バス</a>
-            <a href="Sorachi_Chuo/sorachu.html">空知中央バス</a>
-            <a href="Donan/donan.html">道南バス</a>
-        </div>
-    </body>
+        <ul>
+            <li>
+                <a href="index.html">ホーム</a>
+            </li>
+            <li class="HCB">
+                <a href="HCB_top.html">北海道中央バス</a>
+            </li>
+            <li class="JHB">
+                <a href="JHB_top.html">ジェイ・アール北海道バス</a>
+            </li>
+            <li class="DHB">
+                <a href="DHB_top.html">道北バス</a>
+            </li>
+            <li class="ADK">
+                <a href="ADK_top.html">旭川電気軌道</a>
+            </li>
+            <li class="DNB">
+                <a href="DNB_top.html">道南バス</a>
+            </li>
+        </ul>
+    </header>
+    <div class="body">
+        <p>準備中</p>
+    </div>
+    <script>
+        const images = [
+            "pic/header/header_1.JPG",
+            "pic/header/header_2.JPG",
+            "pic/header/header_3.JPG",
+            "pic/header/header_4.JPG",
+            "pic/header/header_5.JPG",
+            "pic/header/header_6.JPG"
+        ];
+
+        let current = 0;
+        let next = 1;
+        let showingImg1 = true;
+
+        const img1 = document.getElementById("slider-img1");
+        const img2 = document.getElementById("slider-img2");
+
+        img1.src = images[current];
+        img2.src = images[next];
+        img2.style.left = "100%";
+
+        function slide() {
+            if (showingImg1) {
+                img2.src = images[next];
+                img2.style.transition = "none";
+                img2.style.left = "100%";
+
+                // 強制再描画（transition前の状態を確実に反映）
+                void img2.offsetWidth;
+
+                img2.style.transition = "left 1s";
+                img1.style.left = "-100%";
+                img2.style.left = "0";
+            } else {
+                img1.src = images[next];
+                img1.style.transition = "none";
+                img1.style.left = "100%";
+
+                void img1.offsetWidth;
+
+                img1.style.transition = "left 1s";
+                img2.style.left = "-100%";
+                img1.style.left = "0";
+            } 
+
+            showingImg1 = !showingImg1;
+            current = next;
+            next = (next + 1) % images.length;
+        }
+
+        setInterval(slide, 5000);
+
+    </script>
+</body>
 </html>
