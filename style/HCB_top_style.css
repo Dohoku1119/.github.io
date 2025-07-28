@@ -120,11 +120,12 @@ header li.DNB a:hover {
 
 .sidebar {
     width: 20%;
-    height: 100vh; /* 画面の高さ100%に設定 */
+    height: 100vh;
+    margin-right: 0;
+    margin-left: 0; /* autoを削除 */
     background-color: #ffffff;
-    border-left: 5px dotted black;
-    padding: 20px;
-    margin: 0; /* マージンをリセット */
+    margin-top: 0; /* コンテナでmargin-topを設定するため削除 */
+    border-left: 5px dotted black; /* 右側に点線の仕切り線 */
 }
 
 /* ...existing code... */
@@ -223,8 +224,7 @@ header li.DNB a:hover {
 .content-container {
     display: flex;
     margin-top: 20px;
-    gap: 20px;
-    min-height: calc(100vh - 250px); /* ヘッダー分を引いた高さ */
+    gap: 20px; /* セクション間に間隔を追加 */
 }
 
 /* 車両動向セクション */
@@ -247,7 +247,7 @@ header li.DNB a:hover {
 
 /* メーカー選択セクション */
 .body {
-    width: 45%;
+    width: 80%;
     margin-left: 0;
     margin-right: 0;
     padding: 20px;
@@ -295,11 +295,10 @@ header li.DNB a:hover {
 
 .sidebar {
     width: 20%;
-    height: 100vh; /* 画面の高さ100%に設定 */
+    height: fit-content;
     background-color: #ffffff;
     border-left: 5px dotted black;
     padding: 20px;
-    margin: 0; /* マージンをリセット */
 }
 
 .data a img{
