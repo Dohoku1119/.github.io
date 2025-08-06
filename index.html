@@ -33,9 +33,36 @@
             </li>
         </ul>
     </header>
-    <div class="body">
-        <p>このページでは北海道のバス車両について紹介します。</p>
- 
+    <div class="content-container">
+        <div class="body">
+            <p>このページでは北海道のバス車両について紹介します。</p>
+            
+            <div class="updates-section">
+                <h2>更新履歴</h2>
+                <div class="update-list">
+                    <div class="update-item">
+                        <div class="update-date">2025.08.03</div>
+                        <div class="update-content">中央バス<a href="carspage/HCB/s200k3740.html">札幌200か・3740</a>の情報を追加</div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2025.08.03</div>
+                        <div class="update-content">中央バス<a href="carspage/HCB/s200k3300.html">札幌200か・3300</a>の情報を追加</div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2025.08.03</div>
+                        <div class="update-content">道北バス<a href="carspage/DHB/a200k1405.html">旭川200か・1405</a>の情報を追加</div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2025.08.03</div>
+                        <div class="update-content">道北バス<a href="carspage/DHB/a200k1403.html">旭川200か・1403</a>の情報を追加</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <a href="#">サイドバーリンク</a>
+        </div>
     </div>
     <script>
         const images = [
@@ -64,7 +91,6 @@
                 img2.style.transition = "none";
                 img2.style.left = "100%";
 
-                // 強制再描画（transition前の状態を確実に反映）
                 void img2.offsetWidth;
 
                 img2.style.transition = "left 1s";
@@ -88,7 +114,6 @@
         }
 
         setInterval(slide, 5000);
-
     </script>
 </body>
 </html>
