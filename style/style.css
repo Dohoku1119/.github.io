@@ -11,9 +11,8 @@ header ul {
     gap: 32px;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 8px 0 0 0;
     width: 100%;
-    margin: 8px 0 0 0; /* 上に24pxの余白を追加（値はお好みで調整） */
 }
 
 header li {
@@ -80,151 +79,12 @@ header li.DNB a:hover {
     pointer-events: none;
 }
 
-/* コンテナを追加 */
-.content-container {
-    display: flex;
-    margin-top: 20px;
-    gap: 0; /* 隙間なし */
-}
-
-.body {
-    width: 80%;
-    margin-left: 0;
-    margin-right: 0; /* autoを削除 */
-    height: 100vh;
-    margin-top: 0; /* コンテナでmargin-topを設定するため削除 */
-}
-
-.body p{
-    text-align: center;
-    font-size: 20pt;
-}
-
-.data a {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-.data a img {
-    width: 10%;
-    height: auto;
-    margin-top: 20px;
-    transition: background 0.2s;
-
-}
-
-.data a img:hover {
-    background: #b3e6ff;
-}
-
-.sidebar {
-    width: 20%;
-    height: 100vh; /* 画面の高さ100%に設定 */
-    background-color: #ffffff;
-    border-left: 5px dotted black;
-    padding: 20px;
-    margin: 0; /* マージンをリセット */
-}
-
-/* ...existing code... */
-
-.top {
-    width: 80%;
-    margin: 20px auto;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: #fff;
-}
-
-.top:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.top a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-.top img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.top h3 {
-    padding: 15px;
-    margin: 0;
-    font-size: 16px;
-    color: #333;
-    background: #f8f9fa;
-    border-top: 1px solid #e9ecef;
-    text-align: center;
-}
-
-.top a:hover h3 {
-    background: #e3f2fd;
-    color: #1976d2;
-}
-
-/* サブ記事のスタイルも追加 */
-.sub {
-    width: 80%;
-    margin: 20px auto;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: #fff;
-}
-
-.sub:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.sub a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-.sub img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.sub h3 {
-    padding: 15px;
-    margin: 0;
-    font-size: 16px;
-    color: #333;
-    background: #f8f9fa;
-    border-top: 1px solid #e9ecef;
-    text-align: center;
-}
-
-.sub a:hover h3 {
-    background: #e3f2fd;
-    color: #1976d2;
-}
-
-/* ...existing code... */
-
+/* メインコンテナ */
 .content-container {
     display: flex;
     margin-top: 20px;
     gap: 20px;
-    min-height: calc(100vh - 250px); /* ヘッダー分を引いた高さ */
+    min-height: calc(100vh - 250px);
 }
 
 /* 車両動向セクション */
@@ -245,11 +105,9 @@ header li.DNB a:hover {
     padding-bottom: 10px;
 }
 
-/* メーカー選択セクション */
+/* メインコンテンツセクション（8:2の比率で80%） */
 .body {
-    width: 45%;
-    margin-left: 0;
-    margin-right: 0;
+    width: 80%;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
@@ -263,6 +121,16 @@ header li.DNB a:hover {
     color: #333;
 }
 
+.body h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24pt;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* データセクション */
 .data {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -284,8 +152,9 @@ header li.DNB a:hover {
 }
 
 .data a img {
-    width: 80px;
+    width: 40%;
     height: auto;
+    margin-top: 8px;
     transition: transform 0.3s;
 }
 
@@ -293,16 +162,274 @@ header li.DNB a:hover {
     transform: scale(1.1);
 }
 
+/* サイドバー（8:2の比率で20%） */
 .sidebar {
     width: 20%;
-    height: 100vh; /* 画面の高さ100%に設定 */
+    height: fit-content;
     background-color: #ffffff;
     border-left: 5px dotted black;
     padding: 20px;
-    margin: 0; /* マージンをリセット */
+    margin: 0;
 }
 
-.data a img{
-    width:40%;
-    margin-top: 8px;
+.sidebar h3 {
+    color: #333;
+    font-size: 16pt;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #f0f8ff;
+    color: #1976d2;
+}
+
+/* トップ記事 */
+.top {
+    width: 100%;
+    margin: 20px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+}
+
+.top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.top a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.top img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.top h3 {
+    padding: 10px;
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.top a:hover h3 {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+/* サブ記事 */
+.sub {
+    width: 100%;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+}
+
+.sub:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.sub a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.sub img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.sub h3 {
+    padding: 8px;
+    margin: 0;
+    font-size: 12px;
+    color: #333;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.sub a:hover h3 {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+/* 更新履歴セクション */
+.updates-section {
+    width: 75%;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 20px auto 0 auto;
+}
+
+.updates-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 18pt;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.update-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.update-item {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.update-item:last-child {
+    border-bottom: none;
+}
+
+.update-date {
+    min-width: 100px;
+    font-weight: bold;
+    color: #666;
+    font-size: 14px;
+}
+
+.update-content {
+    flex: 1;
+    margin-left: 15px;
+    color: #333;
+    font-size: 14px;
+}
+
+.update-item:hover {
+    background: #f0f8ff;
+    border-radius: 4px;
+    margin: 0 -5px;
+    padding: 10px 5px;
+}
+
+/* 車両詳細ページ用スタイル */
+.vehicle-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.vehicle-info h2 {
+    color: #333;
+    font-size: 18pt;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.info-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.info-table td:first-child {
+    background: #f0f0f0;
+    font-weight: bold;
+    width: 30%;
+}
+
+.vehicle-photos {
+    margin-bottom: 30px;
+}
+
+.vehicle-photos h2 {
+    color: #333;
+    font-size: 18pt;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.vehicle-photo {
+    width: 60%; /* 35%から100%に修正 */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.vehicle-photo:hover {
+    transform: scale(1.05);
+}
+
+.image-container { /* クラスセレクタに修正（.が抜けていた） */
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 アスペクト比 */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    pointer-events: none;
+    z-index: 1;
 }
