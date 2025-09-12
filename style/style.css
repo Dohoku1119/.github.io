@@ -1,7 +1,65 @@
+/* 基本スタイル */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ヘッダー */
 header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+/* ヘッダースライダー */
+#header-slider {
+    height: 200px;
+}
+
+/* モバイルメニュートグル */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ナビゲーション */
+.header-nav {
+    position: relative;
 }
 
 header ul {
@@ -28,6 +86,7 @@ header li a {
     padding: 8px 16px;
     border-radius: 4px;
     transition: background 0.2s;
+    display: block;
 }
 
 header li a:hover {
@@ -35,36 +94,33 @@ header li a:hover {
     color: #c60adf;
 }
 
-/* 北海道中央バス */
+/* 会社別ホバー色 */
 header li.HCB a:hover {
     background: #e60012;
     color: #fff;
 }
 
-/* ジェイ・アール北海道バス */
 header li.JHB a:hover {
     background: #0078d4;
     color: #fff;
 }
 
-/* 道北バス */
 header li.DHB a:hover {
     background: #56be00;
     color: #fff;
 }
 
-/* 旭川電気軌道 */
 header li.ADK a:hover {
     background: #8a0000;
     color: #fff;
 }
 
-/* 道南バス */
 header li.DNB a:hover {
     background: #164907;
     color: #fff;
 }
 
+/* スライダータイトル */
 .slider-title {
     position: absolute;
     left: 50%;
@@ -85,6 +141,10 @@ header li.DNB a:hover {
     margin-top: 20px;
     gap: 20px;
     min-height: calc(100vh - 250px);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
 }
 
 /* 車両動向セクション */
@@ -114,20 +174,15 @@ header li.DNB a:hover {
     border: 1px solid #e0e0e0;
 }
 
-.body p {
+.intro-section {
+    margin-bottom: 30px;
+}
+
+.intro-text {
     text-align: center;
     font-size: 18pt;
     margin-bottom: 20px;
     color: #333;
-}
-
-.body h1 {
-    text-align: center;
-    color: #333;
-    font-size: 24pt;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #007bff;
-    padding-bottom: 10px;
 }
 
 /* データセクション */
@@ -180,16 +235,16 @@ header li.DNB a:hover {
     padding-bottom: 5px;
 }
 
-.sidebar ul {
+.sidebar-links {
     list-style: none;
     padding: 0;
 }
 
-.sidebar ul li {
+.sidebar-links li {
     margin-bottom: 10px;
 }
 
-.sidebar ul li a {
+.sidebar-links li a {
     text-decoration: none;
     color: #333;
     font-size: 14px;
@@ -199,7 +254,7 @@ header li.DNB a:hover {
     transition: background 0.3s;
 }
 
-.sidebar ul li a:hover {
+.sidebar-links li a:hover {
     background: #f0f8ff;
     color: #1976d2;
 }
@@ -432,4 +487,182 @@ header li.DNB a:hover {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     pointer-events: none;
     z-index: 1;
+}
+
+/* タブレット対応 (768px以下) */
+@media screen and (max-width: 768px) {
+    /* ヘッダー */
+    #header-slider {
+        height: 150px;
+    }
+    
+    .slider-title {
+        font-size: 1.8rem;
+    }
+    
+    /* モバイルメニュー表示 */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    header ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        gap: 0;
+        margin: 0;
+        padding: 20px 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    
+    header ul.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    header li {
+        width: 100%;
+        margin: 0;
+    }
+    
+    header li a {
+        padding: 15px 20px;
+        border-radius: 0;
+        font-size: 16px;
+    }
+    
+    /* メインコンテンツ */
+    .content-container {
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .body {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .intro-text {
+        font-size: 16pt;
+    }
+    
+    .updates-section {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .updates-section h2 {
+        font-size: 16pt;
+    }
+    
+    .update-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .update-date {
+        min-width: auto;
+        font-size: 12px;
+    }
+    
+    .update-content {
+        margin-left: 0;
+        font-size: 13px;
+    }
+    
+    /* サイドバー */
+    .sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 5px dotted black;
+        padding: 15px;
+    }
+    
+    .sidebar h3 {
+        font-size: 14pt;
+    }
+}
+
+/* スマートフォン対応 (480px以下) */
+@media screen and (max-width: 480px) {
+    #header-slider {
+        height: 120px;
+    }
+    
+    .slider-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .content-container {
+        padding: 0 10px;
+        margin-top: 10px;
+    }
+    
+    .body {
+        padding: 10px;
+    }
+    
+    .intro-text {
+        font-size: 14pt;
+    }
+    
+    .updates-section {
+        padding: 10px;
+    }
+    
+    .updates-section h2 {
+        font-size: 14pt;
+    }
+    
+    .update-date {
+        font-size: 11px;
+    }
+    
+    .update-content {
+        font-size: 12px;
+    }
+    
+    .sidebar {
+        padding: 10px;
+    }
+    
+    .sidebar h3 {
+        font-size: 13pt;
+    }
+    
+    header li a {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+}
+
+/* 大画面対応 (1200px以上) */
+@media screen and (min-width: 1200px) {
+    .content-container {
+        max-width: 1400px;
+    }
+    
+    .slider-title {
+        font-size: 3rem;
+    }
+    
+    .intro-text {
+        font-size: 20pt;
+    }
+    
+    .updates-section h2 {
+        font-size: 20pt;
+    }
 }
