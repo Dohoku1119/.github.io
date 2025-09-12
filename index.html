@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <title>北海道バス写真館</title>
 </head>
@@ -12,30 +13,39 @@
             <img id="slider-img2" src="pic/header/header_2.JPG" alt="ヘッダー画像2" style="width:100%; height:200px; object-fit:cover; position:absolute; left:100%; top:0; transition:left 1s;">
             <div class="slider-title">北海道バス図鑑</div>
         </div>
-        <ul>
-            <li>
-                <a href="index.html">ホーム</a>
-            </li>
-            <li class="HCB">
-                <a href="HCB_top.html">北海道中央バス</a>
-            </li>
-            <li class="JHB">
-                <a href="JHB_top.html">ジェイ・アール北海道バス</a>
-            </li>
-            <li class="DHB">
-                <a href="DHB_top.html">道北バス</a>
-            </li>
-            <li class="ADK">
-                <a href="ADK_top.html">旭川電気軌道</a>
-            </li>
-            <li class="DNB">
-                <a href="DNB_top.html">道南バス</a>
-            </li>
-        </ul>
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="index.html">ホーム</a>
+                </li>
+                <li class="HCB">
+                    <a href="HCB_top.html">北海道中央バス</a>
+                </li>
+                <li class="JHB">
+                    <a href="JHB_top.html">ジェイ・アール北海道バス</a>
+                </li>
+                <li class="DHB">
+                    <a href="DHB_top.html">道北バス</a>
+                </li>
+                <li class="ADK">
+                    <a href="ADK_top.html">旭川電気軌道</a>
+                </li>
+                <li class="DNB">
+                    <a href="DNB_top.html">道南バス</a>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
     </header>
     <div class="content-container">
         <div class="body">
-            <p>このページでは北海道のバス車両について紹介します。</p>
+            <div class="intro-section">
+                <p class="intro-text">このページでは北海道のバス車両について紹介します。</p>
+            </div>
             
             <div class="updates-section">
                 <h2>更新履歴</h2>
@@ -61,10 +71,16 @@
         </div>
         
         <div class="sidebar">
-            <a href="#">サイドバーリンク</a>
+            <h3>クイックリンク</h3>
+            <ul class="sidebar-links">
+                <li><a href="blog/blog_top.html">バス日記</a></li>
+                <li><a href="#news">最新ニュース</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
         </div>
     </div>
     <script>
+        // ヘッダースライダーのスクリプト
         const images = [
             "pic/header/header_1.JPG",
             "pic/header/header_2.JPG",
@@ -114,6 +130,25 @@
         }
 
         setInterval(slide, 5000);
+
+        // モバイルメニューのスクリプト
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const headerNav = document.querySelector('.header-nav ul');
+
+            mobileMenuToggle.addEventListener('click', function() {
+                headerNav.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+
+            // 画面サイズが変更された時の処理
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    headerNav.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
