@@ -283,7 +283,7 @@ header li.DNB a:hover {
     width: 20%;
     height: fit-content;
     background-color: #ffffff;
-    border-left: 5px dotted black;
+    border-left: 5px dotted #333; /* 点線の色を明確に指定 */
     padding: 20px;
     margin: 0;
 }
@@ -547,167 +547,28 @@ header li.DNB a:hover {
     line-height: 1.4;
 }
 
-/* パンくずリスト */
-.breadcrumb {
-    background: #f8f9fa;
-    padding: 10px 0;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.breadcrumb-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-size: 14px;
-}
-
-.breadcrumb a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
-.breadcrumb .separator {
-    margin: 0 8px;
-    color: #666;
-}
-
-.breadcrumb .current {
-    color: #666;
-    font-weight: bold;
-}
-
-/* ページヘッダー */
-.page-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 30px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 12px;
-    border: 1px solid #dee2e6;
-}
-
-.page-header h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.page-description {
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* 車種選択セクション */
-.vehicle-categories {
-    margin-bottom: 40px;
-}
-
-.vehicle-categories h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 25px;
-    text-align: center;
-    border-bottom: 3px solid #56be00;
-    padding-bottom: 10px;
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4列に固定 */
-    gap: 20px;
+/* 車両解説セクション */
+.vehicle-note {
     margin-top: 30px;
-}
-
-/* カテゴリーカード */
-.category-card {
-    display: block;
-    text-decoration: none;
-    background: #fff;
-    border: 2px solid #e9ecef;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    min-height: 280px; /* 高さを統一 */
-}
-
-.category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border-color: #56be00;
-}
-
-.card-image {
-    height: 140px; /* 画像エリアを少し小さく */
+    padding: 20px;
     background: #f8f9fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    border-radius: 8px;
+    border-left: 4px solid #56be00;
 }
 
-.card-image img {
-    max-width: 70%; /* 画像サイズを調整 */
-    max-height: 70%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.category-card:hover .card-image img {
-    transform: scale(1.1);
-}
-
-.card-content {
-    padding: 15px; /* パディングを調整 */
-    text-align: center;
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card-content h3 {
-    font-size: 1.1rem; /* フォントサイズを調整 */
+.vehicle-note h3 {
     color: #333;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-.card-content p {
-    color: #666;
-    font-size: 0.85rem; /* フォントサイズを調整 */
-    margin-bottom: 10px;
-    line-height: 1.4;
-}
-
-.card-arrow {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
     font-size: 1.2rem;
-    color: #56be00;
-    font-weight: bold;
-    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 8px;
 }
 
-.category-card:hover .card-arrow {
-    transform: translateX(5px);
-}
-
-/* サイドバーの現在ページ表示 */
-.sidebar-links .current-page {
-    background: #56be00 !important;
-    color: white !important;
-    font-weight: bold;
+.vehicle-note .note {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* レスポンシブ対応 */
@@ -751,6 +612,18 @@ header li.DNB a:hover {
     .card-content p {
         font-size: 0.75rem;
     }
+    
+    /* サイドバー */
+    .sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 5px dotted #333; /* モバイルでは上部に点線 */
+        padding: 15px;
+    }
+    
+    .sidebar h3 {
+        font-size: 14pt;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -773,6 +646,15 @@ header li.DNB a:hover {
     
     .card-content p {
         font-size: 0.7rem;
+    }
+    
+    .sidebar {
+        padding: 10px;
+        border-top: 5px dotted #333; /* モバイルでは上部に点線 */
+    }
+    
+    .sidebar h3 {
+        font-size: 13pt;
     }
 }
 
