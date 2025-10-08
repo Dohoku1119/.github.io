@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../style/style.css">
-    <title>道北バス図鑑 - 旭川200か・568</title>
+    <title>北海道バス写真館 - 旭川200か・1119</title>
 </head>
 <body>
     <header>
         <div id="header-slider" style="overflow:hidden; width:100%; height:200px; position:relative;">
-            <img src="../../pic/DHB/header/a200k568.JPG" alt="旭川200か・568" style="width:100%; height:200px; object-fit:cover;">
-            <div class="slider-title">旭川200か・568</div>
+            <img src="../../pic/DHB/header/a200k1119.JPG" alt="旭川200か・1119" style="width:100%; height:200px; object-fit:cover;">
+            <div class="slider-title">旭川200か・1119</div>
         </div>
         <nav class="header-nav">
             <ul>
@@ -42,7 +42,7 @@
     </header>
     <div class="content-container">
         <div class="body">
-            <h1>旭川200か・568 車両詳細</h1>
+            <h1>旭川200か・1119 車両詳細</h1>
 
             <div class="vehicle-info">
                 <h2>車両基本情報</h2>
@@ -50,15 +50,15 @@
                     <table class="info-table">
                         <tr>
                             <td>登録番号</td>
-                            <td>旭川200か・568</td>
+                            <td>旭川200か・1119</td>
                         </tr>
                         <tr>
                             <td>シャシメーカー</td>
-                            <td>日産ディーゼル</td>
+                            <td>いすゞ</td>
                         </tr>
                         <tr>
                             <td>型式</td>
-                            <td>U-UA440LSN</td>
+                            <td>KL-LV280L1改</td>
                         </tr>
                         <tr>
                             <td>ボディメーカー</td>
@@ -66,21 +66,29 @@
                         </tr>
                         <tr>
                             <td>ボディ</td>
-                            <td>7E</td>
+                            <td>新7E</td>
                         </tr>
                         <tr>
                             <td>年式</td>
-                            <td>1994年</td>
+                            <td>2002年</td>
                         </tr>
                         <tr>
                             <td>原動機型式</td>
-                            <td>PF6</td>
+                            <td>8PE1-N</td>
                         </tr>
                         <tr>
                             <td>所属営業所</td>
-                            <td>---</td>
+                            <td>近文</td>
                         </tr>
                     </table>
+                    <p class="note">
+                        この車は2002年に関東の事業者に新車で導入されましたが、後に道北バスへ移籍しました。<br>
+                        過去には同型の1152号車が道北バスに移籍したものの、こちらは既に廃車となっています。<br>
+                        この車の特徴として、元事業者のみで導入されたいすゞKL-LVのノンステップシャーシに新7Eを架装した珍しい車両です。<br>
+                        純正車体と比較すると、エンジンの音がクリアに聞こえたり非公式側の側窓の割り当てが異なります。<br>
+                        また、クーラーはゼクセル製のものを搭載しておりファンが5基の初期型となっています。<br>
+                        現在は市内線で活躍しており、稼働率も非常に高いです。
+                    </p>
                 </div>
             </div>
 
@@ -88,16 +96,20 @@
                 <h2>車両写真</h2>
                 <div class="photo-gallery">
                     <div class="photo-item">
-                        <img src="../../pic/DHB/a200k568.JPG" alt="旭川200か・568 公式側" class="vehicle-photo">
-                        <p class="photo-caption">旭川200か・568 公式側</p>
+                        <img src="../../pic/DHB/a200k1119.JPG" alt="旭川200か・1119 公式側" class="vehicle-photo">
+                        <p class="photo-caption">旭川200か・1119 公式側</p>
                     </div>
                     <div class="photo-item">
-                        <img src="../../pic/DHB/a200k568_2.JPG" alt="旭川200か・568 非公式側" class="vehicle-photo">
-                        <p class="photo-caption">旭川200か・568 非公式側</p>
+                        <img src="../../pic/DHB/a200k1119_2.JPG" alt="旭川200か・1119 非公式側" class="vehicle-photo">
+                        <p class="photo-caption">旭川200か・1119 非公式側</p>
                     </div>
                     <div class="photo-item">
-                        <img src="../../pic/DHB/moket/568.JPG" alt="旭川200か・568 モケット" class="vehicle-photo">
-                        <p class="photo-caption">旭川200か・568 モケット</p>
+                        <img src="../../pic/DHB/a200k1119_3.JPG" alt="旭川200か・1119 車内" class="vehicle-photo">
+                        <p class="photo-caption">旭川200か・1119 車内</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="../../pic/DHB/a200k1119_4.JPG" alt="旭川200か・1119 モケット" class="vehicle-photo">
+                        <p class="photo-caption">旭川200か・1119 モケット</p>
                     </div>
                 </div>
             </div>
@@ -124,8 +136,9 @@
                     mobileMenuToggle.classList.toggle('active');
                 });
 
+                // 画面サイズが変更された時の処理
                 window.addEventListener('resize', function() {
-                    if (window.innerWidth > 768) {
+                    if (window.innerWidth > 768) { // 71119 から 768 に修正
                         headerNav.classList.remove('active');
                         mobileMenuToggle.classList.remove('active');
                     }
